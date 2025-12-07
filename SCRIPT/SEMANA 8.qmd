@@ -1,0 +1,127 @@
+---
+title: "CREAR UN PROYECTO EN RSTUDIO"
+author: "HUAROTE AVALOS KEVIN"
+format: html
+editor: visual
+---
+
+## CONTEXTO
+
+SEMANA 8: COMO INSTALAR UN PAQUETE EN RSTUDIO- REALIZAR GRAFICOS ESTADISTICOS(HISTOGRAMA)
+
+## PASO 1
+
+```{r}
+#1: INGRESAMOS AL RSTUDIO
+```
+
+## PASO 2
+
+```{r}
+#2: PONEMOS E SIGUIENTE COMANDO PARA INSTALAR EL PAQUETE QUE QUEREMOS
+install.packages("diagram")
+
+```
+
+## PASO 3
+
+```{r}
+#3: LO EJECUTAMOS Y LUEGO PONER EL OTRO COMANDO PARA VER SI ESTA HABILITADO EN LA BIBLIOTECA Y LISTO ASI DE FACIL
+library(diagram)
+
+```
+
+## PASO 4
+
+```{r}
+#4:SELECCIONAMOS EL ARCHIVO CSV Y DECARGAMOS PARA EL HISTOGRAMA
+```
+
+## PASO 5
+
+```{r}
+#5: VEZ DESCAGADO BUSCAMOS EN NUESTRO ESCRITORIO ABRIMOS RSTUDIO
+```
+
+## PASO 6
+
+```{r}
+#6: EN EL RSTUDIO HACEMOS CLIC EN IMPORT DATASET
+```
+
+## PASO 7
+
+```{r}
+#7:HACEMOS CLIC HASTA LA PARTE FROM TEST (READR)
+```
+
+## PASO 8
+
+```{r}
+#8: HACEMOS CLIC EN LA PARTE BROWSE PARA BUSCAR EL DOCUMENTOS
+```
+
+## PASO 9
+
+```{r}
+#9: CARGAMOS EL DOCUMENTO QUE VAMOS A UTILIZAR
+DOC:CIRROSIS TAREA
+```
+
+## PASO 10
+
+```{r}
+#10: ANTES DE IMPORTAR EL DOCUMENTO COPIAMOS  EL CODIGO ABAJO QUE ESTA ABAJO PARA PODER  HACER UNA COPIA PARA NO DAÑAR EL DOCUMENTO  ORIGINAL
+
+cirrosis_tarea <- read_csv("C:/Users/huaro/Downloads/cirrosis tarea.csv")
+```
+
+## PASO 11
+
+```{r}
+#11: UNA VEZ IMPORTADO PONEMOS LOS SIGUIENTES CODIGOS PARA REUNIR DATOS PARA EL HISTOGRAMA
+#ver las 6 primera lineas
+head(data)
+#estructura de la data
+str(data)
+#media arimetrica
+mean(data$Edad)
+#mediana arimetrica
+median(data$Edad)
+#moda
+mode_edad<-names(sort(table(data$Edad) ,decreasing = TRUE))
+#medidas de dispersion
+#VARIANZA
+var(data$Edad,na.rm = TRUE)
+
+#DESVIACION ESTANDAR
+sd(data$Edad,na.rm = TRUE)
+
+#RANGO
+range(data$Edad,na.rm = TRUE)
+
+#RANGO INTERCUALITICO
+IQR(data$Edad,na.rm = TRUE)
+
+#MEDIDA DE POSICION
+quantile(data$Edad,probs =c(0.25,0.50,0.75,0.90),na.rm = TRUE)
+summary(data$Edad)
+
+#resumne de todas las variables
+summary(data)
+#tabla de frecuencia
+table(data$Sexo)
+prop.table(table(data$Edad))
+#visualisaciones graficas
+#histograma
+ggplot(data, aes(x= Edad))+geom_histogram(bins = 30)+theme_minimal()
+```
+
+## PASO 12
+
+```{r}
+#12: SI SE HIZO BIEN APARECERA EL LA PARTE DEL COSTADO UN HISTOGRAMA QUE INDICARA EN BASE A LOS DATOS OBTENIDOS ANTERIORMENTE
+
+```
+
+## 
