@@ -1,0 +1,116 @@
+---
+title: "CREAR UN PROYECTO EN RSTUDIO"
+author: "HUAROTE AVALOS KEVIN"
+format: html
+editor: visual
+---
+
+## CONTEXTO
+
+SEMANA 14 analisis de regresion, univariada y multivariada
+
+## PASO 1
+
+```{r}
+#1:para realizar el analisis de regresion lo primero que  debemos hacer es importar el archivo a trabajar y copiar el ejecutable
+```
+
+## PASO 2
+
+```{r}
+#2: despues de  dar control + entel tendremos una copia del documento con ese trabajaremos para no dañar el original
+
+
+```
+
+## PASO 3
+
+```{r}
+#3: EN EL RSTUDIO HACEMOS  CLIC EN IMPORT DATASET
+
+```
+
+## PASO 4
+
+```{r}
+#4:HACEMOS CLIC HASTA LA  PARTE FROM TEST (READR)
+
+```
+
+## PASO 5
+
+```{r}
+#5: HACEMOS CLIC EN LA PARTE BROWSE  PARA BUSCAR EL DOCUMENTOS
+data<- read_csv("C:/Users/huaro/Downloads/cirrosis tarea.csv")
+
+```
+
+## PASO 6
+
+```{r}
+#6: CARGAMOS EL DOCUMENTO QUE VAMOS A UTILIZAR
+```
+
+## PASO 7
+
+```{r}
+#7: ANTES DE IMPORTAR EL DOCUMENTO COPIAMOS  EL CODIGO ABAJO QUE ESTA ABAJO PARA PODER  HACER UNA COPIA PARA NO DAÑAR EL DOCUMENTO ORIGINAL
+<- read_csv("C:/Users/huaro/Downloads/cirrosis tarea.csv")
+```
+
+## PASO 8
+
+```{r}
+#8: UNA VEZ IMPORTADO PONEMOS LOS SIGUIENTES CODIGOS PARA SACAR DATOS QUE QUEREMOS ANALISIS DE REGRESION
+set.seed(123)
+n <- 50
+
+IMC <- rnorm(n, 27, 4)
+Edad <- sample(20:75, n, replace = TRUE)
+Grasas <- rnorm(n, 80, 20)
+
+Colesterol <- 120 + 1.8*IMC + 0.5*Edad + 0.9*Grasas + rnorm(n, 0, 20)
+
+datos2 <- data.frame(Colesterol, IMC, Edad, Grasas)
+head(datos2)
+
+modelo2 <- lm(Colesterol ~ IMC + Edad + Grasas, data = datos2)
+summary(modelo2))
+
+```
+
+## PASO 9
+
+```{r}
+#9: UNA VEZ IMPORTADO PONEMOS LOS SIGUIENTES CODIGOS PARA SACAR DATOS QUE QUEREMOS ANALISIS DE UNIVARIADO
+summary(data$Estado)
+summary(data$Edad)
+summary(data$Dias_Seguimiento)
+```
+
+## 
+
+## PASO 10
+
+```{r}
+#9: UNA VEZ IMPORTADO PONEMOS LOS SIGUIENTES CODIGOS PARA SACAR DATOS QUE QUEREMOS ANALISIS multivariada
+set.seed(123)
+n <- 50
+
+IMC <- rnorm(n, 27, 4)
+Edad <- sample(20:75, n, replace = TRUE)
+Grasas <- rnorm(n, 80, 20)
+
+Colesterol <- 120 + 1.8*IMC + 0.5*Edad + 0.9*Grasas + rnorm(n, 0, 20)
+
+datos2 <- data.frame(Colesterol, IMC, Edad, Grasas)
+head(datos2)
+
+modelo_multi <- lm(Colesterol ~ IMC + Edad + Grasas, data = datos2)
+summary(modelo_multi)
+
+
+
+```
+
+## 
