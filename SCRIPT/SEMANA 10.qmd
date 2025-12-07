@@ -1,0 +1,83 @@
+---
+title: "CREAR UN PROYECTO EN RSTUDIO"
+author: "HUAROTE AVALOS KEVIN"
+format: html
+editor: visual
+---
+
+## CONTEXTO
+
+SEMANA 10: Calcular las Medidas de Tendencia Central (media aritmética, mediana, moda)
+
+## PASO 1
+
+```{r}
+#1:SELECCIONAMOS EL ARCHIVO CSV Y DECARGAMOS PARA EL HISTOGRAM
+```
+
+## PASO 2
+
+```{r}
+#2: VEZ DESCAGADO BUSCAMOS EN  NUESTRO ESCRITORIO ABRIMOS RSTUDIO
+
+```
+
+## PASO 3
+
+```{r}
+#3: EN EL RSTUDIO HACEMOS  CLIC EN IMPORT DATASET
+
+```
+
+## PASO 4
+
+```{r}
+#4:HACEMOS CLIC HASTA LA  PARTE FROM TEST (READR)
+
+```
+
+## PASO 5
+
+```{r}
+#5: HACEMOS CLIC EN LA PARTE BROWSE  PARA BUSCAR EL DOCUMENTOS
+data<- read_csv("C:/Users/huaro/Downloads/cirrosis tarea.csv")
+
+```
+
+## PASO 6
+
+```{r}
+#6: CARGAMOS EL DOCUMENTO QUE VAMOS A UTILIZAR
+```
+
+## PASO 7
+
+```{r}
+#7: ANTES DE IMPORTAR EL DOCUMENTO COPIAMOS  EL CODIGO ABAJO QUE ESTA ABAJO PARA PODER  HACER UNA COPIA PARA NO DAÑAR EL DOCUMENTO ORIGINAL
+<- read_csv("C:/Users/huaro/Downloads/cirrosis tarea.csv")
+```
+
+## PASO 8
+
+```{r}
+#8: UNA VEZ IMPORTADO PONEMOS LOS SIGUIENTES CODIGOS PARA SACAR LA MEDIA Y MEDIANA Y MODA DE LA DATA USADA
+#ver las 6 primera lineas
+  head(data)
+  #estructura de la data
+  str(data)
+  #media arimetrica
+  mean(data$Edad)
+  #mediana arimetrica
+  median(data$Edad)
+  #moda
+  mode_edad<-names(sort(table(data$Edad) ,decreasing = TRUE))
+```
+
+## PASO 9
+
+```{r}
+#9: SI SE HIZO BIEN APARECERA EL LA  PARTE DE ABAJO LOS RESULTADOS DE  LO QUE PEDIMOS CON LOS COMANDOS
+
+```
+
+## 
